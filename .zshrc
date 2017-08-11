@@ -34,9 +34,6 @@ EOBUNDLES
 
 source ~/.zshlocal
 
-# Antigen Theme
-antigen theme https://github.com/ryanvanrooyen/.zsh antigen.zsh-theme
-
 # export ZSH_AUTOSUGGEST_STRATEGY=default
 export ZSH_AUTOSUGGEST_STRATEGY=match_prev_cmd
 antigen apply
@@ -91,6 +88,8 @@ function extract() # Handy Extract Program
         echo "'$1' is not a valid file!"
     fi
 }
+
+source ~/.zsh/theme.zsh
 
 # Set Virtual Environment variables
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
