@@ -70,7 +70,6 @@ antigen apply
 #set up theme & omzsh stuff
 COMPLETION_WAITING_DOTS="true"
 
-
 function extract() # Handy Extract Program
 {
     if [ -f $1 ] ; then
