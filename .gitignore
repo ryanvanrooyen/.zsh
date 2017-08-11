@@ -1,0 +1,6 @@
+local.zsh
+*.swp
+.zcompdump
+.antigen
+.histfile
+.DS_Store
