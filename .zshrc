@@ -32,7 +32,6 @@ antigen bundles <<EOBUNDLES
  zsh-users/zsh-syntax-highlighting
 EOBUNDLES
 
-
 source ~/.zshlocal
 
 # Antigen Theme
