@@ -32,6 +32,16 @@ antigen bundles <<EOBUNDLES
  zsh-users/zsh-syntax-highlighting
 EOBUNDLES
 
+
+source ~/.zshlocal
+
+# Antigen Theme
+antigen theme https://github.com/ryanvanrooyen/.zsh antigen.zsh-theme
+
+# export ZSH_AUTOSUGGEST_STRATEGY=default
+export ZSH_AUTOSUGGEST_STRATEGY=match_prev_cmd
+antigen apply
+
 # General Aliases
 alias l='ls -alh'
 alias cp='cp -iv'
@@ -57,15 +67,6 @@ if [[ `uname` == "Darwin" ]]; then
 elif [ "$(expr substr `uname` -s) 1 5)" == "Linux" ]; then
     source ~/.zsh/linux.zsh
 fi
-
-source ~/.zshlocal
-
-# Antigen Theme
-antigen theme https://github.com/ryanvanrooyen/.zsh antigen.zsh-theme
-
-# export ZSH_AUTOSUGGEST_STRATEGY=default
-export ZSH_AUTOSUGGEST_STRATEGY=match_prev_cmd
-antigen apply
 
 #set up theme & omzsh stuff
 COMPLETION_WAITING_DOTS="true"
