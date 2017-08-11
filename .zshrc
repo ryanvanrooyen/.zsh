@@ -4,6 +4,9 @@ TERM=screen-256color
 # Path configuration
 export PATH="/usr/local/bin:$PATH"
 
+# Set default prompt character
+PROMPT_CHAR='>'
+
 # The following lines were added by compinstall
 zstyle ':completion:*' completer _expand _complete _ignored _approximate
 zstyle :compinstall filename '~/.zsh/.zshrc'
@@ -29,26 +32,6 @@ antigen bundles <<EOBUNDLES
  zsh-users/zsh-syntax-highlighting
 EOBUNDLES
 
-# Antigen Theme
-PROMPT_CHAR='>'
-antigen theme https://github.com/ryanvanrooyen/.zsh antigen.zsh-theme
-
-# export ZSH_AUTOSUGGEST_STRATEGY=default
-export ZSH_AUTOSUGGEST_STRATEGY=match_prev_cmd
-antigen apply
-
-#set up theme & omzsh stuff
-COMPLETION_WAITING_DOTS="true"
-plugins=(git git-extras git-flow brew npm sudo osx)
-
-if [[ `uname` == "Darwin" ]]; then
-    source ~/.zsh/mac.zsh
-elif [ "$(expr substr `uname` -s) 1 5)" == "Linux" ]; then
-    source ~/.zsh/linux.zsh
-fi
-
-source ~/.zsh/local.zsh
-
 # General Aliases
 alias l='ls -alh'
 alias cp='cp -iv'
@@ -68,6 +51,25 @@ alias pop='git stash pop -q && git status -sb'
 alias switch='git stash -q && git checkout -q'
 alias branches='git remote prune origin && git branch -a'
 alias branch_cleanup='git remote prune origin && git branch -vv | grep '"'"': gone]'"'"' | awk '"'"'{print $1}'"'"' | xargs git branch -d'
+
+if [[ `uname` == "Darwin" ]]; then
+    source ~/.zsh/mac.zsh
+elif [ "$(expr substr `uname` -s) 1 5)" == "Linux" ]; then
+    source ~/.zsh/linux.zsh
+fi
+
+source ~/.zshlocal
+
+# Antigen Theme
+antigen theme https://github.com/ryanvanrooyen/.zsh antigen.zsh-theme
+
+# export ZSH_AUTOSUGGEST_STRATEGY=default
+export ZSH_AUTOSUGGEST_STRATEGY=match_prev_cmd
+antigen apply
+
+#set up theme & omzsh stuff
+COMPLETION_WAITING_DOTS="true"
+
 
 function extract() # Handy Extract Program
 {
