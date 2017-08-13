@@ -60,7 +60,7 @@ alias branch_cleanup='git remote prune origin && git branch -vv | grep '"'"': go
 
 if [[ `uname` == "Darwin" ]]; then
     source ~/.zsh/mac.zsh
-elif [ "$(expr substr `uname` -s) 1 5)" == "Linux" ]; then
+elif [[ `uname` == "Linux" ]]; then
     source ~/.zsh/linux.zsh
 fi
 
