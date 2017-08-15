@@ -54,7 +54,7 @@ alias gd='git diff --ignore-space-at-eol'
 alias stash='git stash -q'
 alias stashes='git --no-pager stash list'
 alias pop='git stash pop -q && git status -sb'
-alias switch='git stash -q && git checkout -q && gs'
+alias switch='git stash -q && git checkout -q'
 alias branches='git remote prune origin && git branch -a'
 alias branch_cleanup='git remote prune origin && git branch -vv | grep '"'"': gone]'"'"' | awk '"'"'{print $1}'"'"' | xargs git branch -d'
 
