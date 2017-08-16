@@ -51,6 +51,7 @@ alias ga='git add -A && git status -sb'
 alias gr='git reset -q && git status -sb'Ï
 alias gc='git commit -a -m '"$1"''
 alias gd='git diff --ignore-space-at-eol'
+alias gdf='git difftool HEAD@{1} '"$1"''
 alias stash='git stash -q'
 alias stashes='git --no-pager stash list'
 alias pop='git stash pop -q && git status -sb'
