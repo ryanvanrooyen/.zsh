@@ -46,12 +46,13 @@ alias path='echo -e ${PATH//:/\\n}'
 
 # Git Aliases
 alias gs='git status -sb'
-alias gb='git branch $1 && git checkout $1'
+alias gb='git checkout -b $1'
 alias ga='git add -A && git status -sb'
 alias gr='git reset -q && git status -sb'Ï
 alias gc='git commit -a -m '"$1"''
-# alias gd='git diff --ignore-space-at-eol'
-alias gd='git difftool'
+alias gpub='git push -uq origin `git rev-parse --abbrev-ref HEAD` && git status -sb'
+alias gd='git diff --ignore-space-at-eol'
+alias gdt='git difftool'
 alias stash='git stash -q'
 alias stashes='git --no-pager stash list'
 alias pop='git stash pop -q && git status -sb'
