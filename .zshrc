@@ -2,7 +2,7 @@
 TERM=screen-256color
 
 # Path configuration
-export PATH="/usr/local/bin:$PATH"
+# export PATH="/usr/local/bin:$PATH"
 
 # Set default prompt character
 PROMPT_CHAR='>'
