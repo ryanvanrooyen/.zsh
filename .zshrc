@@ -43,6 +43,7 @@ alias l='ls -alh'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias path='echo -e ${PATH//:/\\n}'
+alias svim='sudo vim -u ~/.vim/vimrc'
 
 # Git Aliases
 alias gs='git status -sb'
