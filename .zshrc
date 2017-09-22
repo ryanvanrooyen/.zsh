@@ -2,7 +2,7 @@
 TERM=screen-256color
 
 # Path configuration
-# export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 
 # Set default prompt character
 PROMPT_CHAR='>'
@@ -66,6 +66,8 @@ elif [[ `uname` == "Linux" ]]; then
     source ~/.zsh/linux.zsh
 fi
 
+DISABLE_AUTO_TITLE="true"
+
 #set up theme & omzsh stuff
 COMPLETION_WAITING_DOTS="true"
 
@@ -101,4 +103,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 # Allows ctrl+s to register in Vim
 stty -ixon
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 

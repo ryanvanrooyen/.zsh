@@ -1,6 +1,6 @@
 
 # Disable command echo in Terminal
-stty -echoctl
+# stty -echoctl
 
 # Set path for Go projects
 export GOPATH=~/Documents/GoProjects
