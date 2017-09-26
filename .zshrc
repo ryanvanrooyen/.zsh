@@ -105,6 +105,13 @@ source /usr/local/bin/virtualenvwrapper.sh
 # Allows ctrl+s to register in Vim
 stty -ixon
 
+alias ag='ag --hidden -p ~/.zsh/.agignore'
+alias s='ag -C 3 --hidden -p ~/.zsh/.agignore'
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+# Setting ag as the default source for fzf
+export FZF_DEFAULT_COMMAND='ag -g ""'
+# To apply the command to CTRL-T as well
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
