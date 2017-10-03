@@ -1,3 +1,9 @@
+GamePrototype/
+Library/
+Music/
+Applications/
+Pictures/
+.virtualenvs/
 .git/
 static/js/lib/
 static/css/
