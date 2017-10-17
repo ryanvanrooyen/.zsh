@@ -45,6 +45,10 @@ alias mv='mv -iv'
 alias path='echo -e ${PATH//:/\\n}'
 alias svim='sudo vim -u ~/.vim/vimrc'
 
+# Home Aliases
+alias bblue='ssh bblue -qt "tmux a || (echo '"'creating new session...'"' && tmux)"'
+alias home='ssh home -qt "tmux a || (echo '"'creating new session...'"' && tmux)"'
+
 # Git Aliases
 alias gs='git status -sb'
 alias gb='git checkout -b $1'
@@ -67,7 +71,7 @@ elif [[ `uname` == "Linux" ]]; then
     source ~/.zsh/linux.zsh
 fi
 
-DISABLE_AUTO_TITLE="true"
+# DISABLE_AUTO_TITLE="true"
 
 #set up theme & omzsh stuff
 COMPLETION_WAITING_DOTS="true"
