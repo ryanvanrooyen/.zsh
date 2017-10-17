@@ -100,12 +100,6 @@ function extract() # Handy Extract Program
 
 source ~/.zsh/theme.zsh
 
-# Set Virtual Environment variables
-export VIRTUALENVWRAPPER_PYTHON=python3
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-export WORKON_HOME=~/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-
 # Allows ctrl+s to register in Vim
 stty -ixon
 

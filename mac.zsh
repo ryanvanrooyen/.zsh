@@ -6,6 +6,12 @@
 export GOPATH=~/Documents/GoProjects
 export PATH=$PATH:$GOPATH/bin
 
+# Set Virtual Environment variables
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+export WORKON_HOME=~/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+
 # Use normal CLI LS colors
 # export CLICOLOR=1
 # export CLICOLOR_FORCE=1
