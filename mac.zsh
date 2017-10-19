@@ -6,6 +6,11 @@
 export GOPATH=~/Documents/GoProjects
 export PATH=$PATH:$GOPATH/bin
 
+# Mac Aliases
+function trash() {
+    mv -f "$1" ~/.Trash
+}
+
 # Set Virtual Environment variables
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 export VIRTUAL_ENV_DISABLE_PROMPT=1

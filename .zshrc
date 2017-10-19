@@ -39,6 +39,10 @@ export ZSH_AUTOSUGGEST_STRATEGY=match_prev_cmd
 antigen apply
 
 # General Aliases
+alias watch='watch -c -t -n 1 '
+alias watchd='watch -cd -t -n 1 '
+alias watchf='watch -cd -t -n 3 cat '
+alias ts='sed -l '"'s/^/`date +'''%a %b %d %k:%M:%S:'''` /'"''
 alias l='ls -alh'
 alias cp='cp -iv'
 alias mv='mv -iv'
@@ -50,7 +54,7 @@ alias bblue='ssh bblue -qt "tmux a || (echo '"'creating new session...'"' && tmu
 alias home='ssh home -qt "tmux a || (echo '"'creating new session...'"' && tmux)"'
 
 # Git Aliases
-alias gs='git status -sb'
+alias gs='git -c color.status=always status -sb'
 alias gb='git checkout -b $1'
 alias ga='git add -A && git status -sb'
 alias gr='git reset -q && git status -sb'Ï
@@ -104,7 +108,7 @@ source ~/.zsh/theme.zsh
 stty -ixon
 
 alias ag='ag --hidden -p ~/.zsh/.agignore'
-alias s='ag -C 3 --hidden -p ~/.zsh/.agignore'
+alias s='ag -Q -C 3 --hidden -p ~/.zsh/.agignore'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
@@ -112,4 +116,6 @@ export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 export FZF_DEFAULT_COMMAND='ag -g ""'
 # To apply the command to CTRL-T as well
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+export CLICOLOR_FORCE=1
 
