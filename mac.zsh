@@ -28,4 +28,10 @@ alias i_newtab="osascript -e 'tell application \"iTerm2\" to tell current window
 alias i_exec="osascript -e 'tell application \"iTerm2\" to tell current window to tell current session to write text \" $1 \"'"
 
 # General helpers
-alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222'
+alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+alias chrome-debug='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222'
+
+function alert() {
+    osascript -e 'display notification "'$2'" with title "'$1'"'
+}
+

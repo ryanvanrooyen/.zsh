@@ -48,6 +48,7 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 alias path='echo -e ${PATH//:/\\n}'
 alias svim='sudo vim -u ~/.vim/vimrc'
+alias ta='tmux a || tmux'
 
 # Home Aliases
 alias bblue='ssh bblue -qt "tmux a || (echo '"'creating new session...'"' && tmux)"'
@@ -56,18 +57,19 @@ alias home='ssh home -qt "tmux a || (echo '"'creating new session...'"' && tmux)
 # Git Aliases
 alias gs='git -c color.status=always status -sb'
 alias gb='git checkout -b $1'
-alias ga='git add -A && git status -sb'
+alias ga='git add -A'
 alias gr='git reset -q && git status -sb'Ï
-alias gc='git commit -a -m '"$1"''
+alias gc='git commit -m '"$1"''
 alias gpub='git push -uq origin `git rev-parse --abbrev-ref HEAD` && git status -sb'
-alias gd='git diff --ignore-space-at-eol'
-alias gdt='git difftool'
+alias gd='git diff --ignore-space-at-eol $1 $2 $2'
+alias gdt='git difftool $1 $2 $2'
 alias stash='git stash -q'
 alias stashes='git --no-pager stash list'
 alias pop='git stash pop -q && git status -sb'
 alias switch='git stash -q && git checkout -q'
 alias branches='git remote prune origin && git branch -a'
 alias branch_cleanup='git remote prune origin && git branch -vv | grep '"'"': gone]'"'"' | awk '"'"'{print $1}'"'"' | xargs git branch -d'
+alias wgd='watch gd $1 --stat --color --summary'
 
 if [[ `uname` == "Darwin" ]]; then
     source ~/.zsh/mac.zsh
@@ -107,8 +109,8 @@ source ~/.zsh/theme.zsh
 # Allows ctrl+s to register in Vim
 stty -ixon
 
-alias ag='ag --hidden -p ~/.zsh/.agignore'
-alias s='ag -Q -C 3 --hidden -p ~/.zsh/.agignore'
+alias ag='ag --hidden'
+alias s='ag -Q -C 0 --hidden -p ~/.zsh/.agignore'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
