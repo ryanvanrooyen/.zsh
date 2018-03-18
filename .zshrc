@@ -47,7 +47,7 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 alias path='echo -e ${PATH//:/\\n}'
 alias svim='sudo vim -u ~/.vim/vimrc'
-alias ta='tmux a || tmux'
+alias ta='tmux a'
 
 # Home Aliases
 alias bblue='ssh bblue -qt "tmux a || (echo '"'creating new session...'"' && tmux)"'
