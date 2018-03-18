@@ -108,6 +108,8 @@ source ~/.zsh/theme.zsh
 # Allows ctrl+s to register in Vim
 stty -ixon
 
+[[ $TMUX = "" ]] && export TERM="xterm-256color"
+
 alias ag='ag --hidden'
 alias s='ag -Q -C 0 --hidden -p ~/.zsh/.agignore'
 
