@@ -42,7 +42,7 @@ alias watch='watch -c -t -n 1 '
 alias watchd='watch -cd -t -n 1 '
 alias watchf='watch -cd -t -n 3 cat '
 alias ts='sed -l '"'s/^/`date +'''%a %b %d %k:%M:%S:'''` /'"''
-alias l='ls -alh'
+alias l='ls -aoh'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias path='echo -e ${PATH//:/\\n}'
@@ -69,6 +69,7 @@ alias switch='git stash -q && git checkout -q'
 alias branches='git remote prune origin && git branch -a'
 alias branch_cleanup='git remote prune origin && git branch -vv | grep '"'"': gone]'"'"' | awk '"'"'{print $1}'"'"' | xargs git branch -d'
 alias wgd='watch gd $1 --stat --color --summary'
+alias gl='git log --pretty=format:"%C(auto)%h: %s %n         %an (%ar)%n"'
 
 if [[ `uname` == "Darwin" ]]; then
     source ~/.zsh/mac.zsh
