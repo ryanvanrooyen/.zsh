@@ -113,7 +113,7 @@ stty -ixon
 [[ $TMUX = "" ]] && export TERM="xterm-256color"
 
 alias ag='ag --hidden'
-alias s='ag -Q -C 0 --hidden -p ~/.zsh/.agignore'
+alias s='ag -Q -i -C 0 --hidden -p ~/.zsh/.agignore'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
