@@ -55,6 +55,7 @@ alias bblue='ssh bblue -qt "tmux a || (echo '"'creating new session...'"' && tmu
 alias home='ssh home -qt "tmux a || (echo '"'creating new session...'"' && tmux)"'
 
 # Git Aliases
+alias gf='git fetch'
 alias gs='git -c color.status=always status -sb'
 alias gb='git branch'
 alias ga='git add'
