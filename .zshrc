@@ -58,7 +58,8 @@ alias home='ssh home -qt "tmux a || (echo '"'creating new session...'"' && tmux)
 alias gf='git fetch'
 alias gs='git -c color.status=always status -sb'
 alias gb='git branch'
-alias ga='git add'
+function ga() { git add $@ && git status -sb }
+alias gg='git grep -n --break --heading'
 alias gr='git reset -q && git status -sb'Ï
 alias gc='git commit -m '"$1"''
 alias gco='git checkout'
