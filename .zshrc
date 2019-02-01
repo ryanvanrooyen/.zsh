@@ -72,7 +72,7 @@ alias pop='git stash pop -q && git status -sb'
 alias branches='git remote prune origin && git branch -a'
 alias branch_cleanup='git remote prune origin && git branch -vv | grep '"'"': gone]'"'"' | awk '"'"'{print $1}'"'"' | xargs git branch -d'
 alias wgd='watch gd $1 --stat --color --summary'
-alias gl='git --no-pager log --color --graph -n10 --pretty=format:"%C(auto)%h: %s %n         %C(cyan)%cN (%cr)%n"'
+alias gl='git log --color --graph --pretty=format:"%C(auto)%h: %s %n           %C(cyan)%cN (%cr)%n"'
 
 if [[ `uname` == "Darwin" ]]; then
     source ~/.zsh/mac.zsh

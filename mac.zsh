@@ -2,10 +2,6 @@
 # Disable command echo in Terminal
 # stty -echoctl
 
-# Set path for Go projects
-export GOPATH=~/Documents/GoProjects
-export PATH=$PATH:$GOPATH/bin
-
 # Mac Aliases
 function trash() {
     mv -f "$1" ~/.Trash
