@@ -47,7 +47,6 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 alias path='echo -e ${PATH//:/\\n}'
 alias svim='sudo vim -u ~/.vim/vimrc'
-alias ta='tmux a'
 alias f='find ./ -name "$1"'
 
 # Home Aliases
@@ -60,12 +59,11 @@ alias gs='git -c color.status=always status -sb'
 alias gb='git branch'
 function ga() { git add $@ && git status -sb }
 alias gg='git grep -n --break --heading'
-alias gr='git reset -q && git status -sb'Ï
 alias gc='git commit -m '"$1"''
 alias gco='git checkout'
 alias gpub='git push -uq origin `git rev-parse --abbrev-ref HEAD` && git status -sb'
-alias gd='git diff --ignore-space-at-eol $1 $2 $2'
-alias gdt='git difftool $1 $2 $2'
+alias gd='git diff --ignore-space-at-eol'
+alias gdt='git difftool'
 alias stash='git stash -q'
 alias stashes='git --no-pager stash list'
 alias pop='git stash pop -q && git status -sb'
