@@ -1,9 +1,6 @@
 
 TERM=screen-256color
 
-# Path configuration
-export PATH="/usr/local/bin:$PATH"
-
 # Set default prompt character
 PROMPT_CHAR='>'
 
@@ -21,26 +18,21 @@ bindkey -v
 
 # Set antigen install folder
 ADOTDIR=~/.zsh/.antigen
-# Activate antigen
 source ~/.zsh/antigen.zsh
 
 antigen use oh-my-zsh
 antigen bundles <<EOBUNDLES
- zsh-users/zsh-history-substring-search
  zsh-users/zsh-autosuggestions
  zsh-users/zsh-syntax-highlighting
 EOBUNDLES
 
 source ~/.zshlocal
 
-# export ZSH_AUTOSUGGEST_STRATEGY=default
 export ZSH_AUTOSUGGEST_STRATEGY=match_prev_cmd
 antigen apply
 
 # General Aliases
 alias watch='watch -c -t -n 1 '
-alias watchd='watch -cd -t -n 1 '
-alias watchf='watch -cd -t -n 3 cat '
 alias ts='sed -l '"'s/^/`date +'''%a %b %d %k:%M:%S:'''` /'"''
 alias l='ls -Aoh'
 alias cp='cp -iv'
@@ -54,22 +46,20 @@ alias bblue='ssh bblue -qt "tmux a || (echo '"'creating new session...'"' && tmu
 alias home='ssh home -qt "tmux a || (echo '"'creating new session...'"' && tmux)"'
 
 # Git Aliases
-alias gf='git fetch'
 alias gs='git -c color.status=always status -sb'
-alias gb='git branch'
-function ga() { git add $@ && git status -sb }
+alias ga='git add $@ && git status-sb'
+# function ga() { git add $@ && git status -sb }
 alias gg='git grep -n --break --heading'
 alias gc='git commit -m '"$1"''
 alias gco='git checkout'
 alias gpub='git push -uq origin `git rev-parse --abbrev-ref HEAD` && git status -sb'
-alias gd='git diff --ignore-space-at-eol'
+alias gd='git diff --color --ignore-space-at-eol'
 alias gdt='git difftool'
 alias stash='git stash -q'
 alias stashes='git --no-pager stash list'
 alias pop='git stash pop -q && git status -sb'
 alias branches='git remote prune origin && git branch -a'
 alias branch_cleanup='git remote prune origin && git branch -vv | grep '"'"': gone]'"'"' | awk '"'"'{print $1}'"'"' | xargs git branch -d'
-alias wgd='watch gd $1 --stat --color --summary'
 alias gl='git log --color --graph --pretty=format:"%C(auto)%h: %s %n           %C(cyan)%cN (%cr)%n"'
 
 if [[ `uname` == "Darwin" ]]; then
