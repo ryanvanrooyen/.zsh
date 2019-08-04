@@ -1,6 +1,8 @@
 
 TERM=screen-256color
 
+export PATH="/usr/local/bin:$PATH"
+
 # Set default prompt character
 PROMPT_CHAR='>'
 
@@ -47,8 +49,7 @@ alias home='ssh home -qt "tmux a || (echo '"'creating new session...'"' && tmux)
 
 # Git Aliases
 alias gs='git -c color.status=always status -sb'
-alias ga='git add $@ && git status-sb'
-# function ga() { git add $@ && git status -sb }
+function ga() { git add "$@" && git status -sb }
 alias gg='git grep -n --break --heading'
 alias gc='git commit -m '"$1"''
 alias gco='git checkout'
