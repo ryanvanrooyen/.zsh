@@ -7,6 +7,10 @@ function trash() {
     mv -f "$1" ~/.Trash
 }
 
+function trust() {
+	xattr -d com.apple.quarantine $1
+}
+
 # Set Virtual Environment variables
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 export VIRTUAL_ENV_DISABLE_PROMPT=1
