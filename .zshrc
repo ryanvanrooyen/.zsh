@@ -56,12 +56,9 @@ alias gco='git checkout'
 alias gpub='git push -uq origin `git rev-parse --abbrev-ref HEAD` && git status -sb'
 alias gd='git diff --color --ignore-space-at-eol'
 alias gdt='git difftool'
-alias stash='git stash -q'
-alias stashes='git --no-pager stash list'
-alias pop='git stash pop -q && git status -sb'
 alias branches='git remote prune origin && git branch -a'
 alias branch_cleanup='git remote prune origin && git branch -vv | grep '"'"': gone]'"'"' | awk '"'"'{print $1}'"'"' | xargs git branch -d'
-alias gl='git --no-pager log --color --graph --pretty=format:"%C(auto)%h: %s %n           %C(cyan)%cN (%cr)%n" -n 10'
+alias gl='git --no-pager log --color --graph --pretty=format:"%C(auto)%h %C(cyan)%cN (%cr)%C(auto)%d%n          %<(70,trunc)%s%n" -n 10'
 
 if [[ `uname` == "Darwin" ]]; then
     source ~/.zsh/mac.zsh
@@ -73,6 +70,12 @@ fi
 
 #set up theme & omzsh stuff
 COMPLETION_WAITING_DOTS="true"
+
+function tmx()
+{
+    file=${1:-all}
+	source "$HOME/.tmux/$file.conf";
+}
 
 function extract() # Handy Extract Program
 {
