@@ -58,7 +58,7 @@ alias gd='git diff --color --ignore-space-at-eol'
 alias gdt='git difftool'
 alias branches='git remote prune origin && git branch -a'
 alias branch_cleanup='git remote prune origin && git branch -vv | grep '"'"': gone]'"'"' | awk '"'"'{print $1}'"'"' | xargs git branch -d'
-alias gl='git --no-pager log --color --graph --pretty=format:"%C(auto)%h %C(cyan)%cN (%cr)%C(auto)%d%n          %<(70,trunc)%s%n" -n 10'
+alias gl='git log --color --graph --pretty=format:"%C(auto)%h %C(cyan)%cN (%cr)%C(auto)%d%n        %<(70,trunc)%s%n"'
 
 if [[ `uname` == "Darwin" ]]; then
     source ~/.zsh/mac.zsh
