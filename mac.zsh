@@ -12,10 +12,10 @@ function trust() {
 }
 
 # Set Virtual Environment variables
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-export WORKON_HOME=~/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+# export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+# export VIRTUAL_ENV_DISABLE_PROMPT=1
+# export WORKON_HOME=~/.virtualenvs
+# source /usr/local/bin/virtualenvwrapper.sh
 
 # Use normal CLI LS colors
 # export CLICOLOR=1
